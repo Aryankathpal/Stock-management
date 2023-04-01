@@ -1,1 +1,33 @@
-<p>stocks works!</p>
+
+<section>
+  <div class="example-button-row">
+        <button (click)="add()" mat-raised-button color="primary">Add Item</button>
+  </div>
+</section>
+<div class="top">
+<table class="table table-hover">
+  <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Item Name</th>
+        <th scope="col">Supplier</th>
+        <th scope="col">Date</th>
+        <th scope="col">Available Stocks</th>
+
+      </tr>
+    </thead>
+    <tbody (click)="edit()" *ngFor="let items of stockItems">
+    
+      <tr>
+        <th scope="row">{{items.id}}</th>
+        <td >{{items.name}}</td>
+        <td >
+          <li *ngFor="let i of items.supplier">{{i}}</li>
+        </td>
+        <td>{{items.date}}</td>
+        <td>{{items.Available}}</td>
+      </tr>
+      
+    </tbody>    
+</table>
+</div>

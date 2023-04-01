@@ -1,0 +1,18 @@
+table {
+  width: 100%;
+}
+.table{
+  --bs-table-hover-bg:#ebf5fa;
+}
+.top{
+  padding: 50px;
+}
+section {
+  display: table;
+  right: 30px;
+position: absolute;
+padding: 20px;
+}
+li {
+  list-style-type: none;
+}
