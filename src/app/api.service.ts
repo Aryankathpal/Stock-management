@@ -7,15 +7,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
-  url= "http://localhost:8082"
+  url= "http://localhost:8081"
   constructor(private http:HttpClient) { }
 
   getPurchasedItems(){ 
     return this.http.get(this.url+'/purchased-items')
   }
   updatePurchasedItems(body){
-    console.log(body);
-    console.log(this.url+'/update-purchase/'+body.id);
     return this.http.put(this.url+'/update-purchase/'+body.id,body)
   }
   addPurchasedItems(body){

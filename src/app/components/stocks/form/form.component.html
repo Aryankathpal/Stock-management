@@ -1,12 +1,12 @@
 
     <form class="form1">
-      <input class="un " type="text" name="name" [(ngModel)]="form.name" value={{form.name}} placeholder="Item Name">
-      <input class="un " type="text" name="supplier" [(ngModel)]="form.supplier" value={{form.supplier}} placeholder="Supplier">
-      <input class="un " type="text" name="date" [(ngModel)]="form.date" value={{form.date}} placeholder="Date">
-      <input class="un " type="text" name="stocks" [(ngModel)]="form.Available" value={{form.Available}} placeholder="Available Stocks">
+      <input class="un " type="text" name="name" [(ngModel)]="form.name" value={{form.name}} placeholder="Item Name" required>
+      <input class="un " type="text" name="supplier" [(ngModel)]="form.supplier" value={{form.supplier}} placeholder="Supplier" required>
+      <input class="un " type="text" name="date" [(ngModel)]="form.date" value={{form.date}} placeholder="Date" required>
+      <input class="un " type="text" name="stocks" [(ngModel)]="form.stocks" value={{form.stocks}} placeholder="Available Stocks" required>
       <section>
         <div class="example-button-row">
-              <button (click)="submit()" class="btn btn-primary">Add Item</button>
+              <button (click)="submit()" type="submit" class="btn btn-primary">Add Item</button>
         </div>
       </section>
     </form>               

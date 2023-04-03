@@ -14,6 +14,17 @@ export class PurchasedComponent{
 
   purchasedItems:any;
   item:any;
+  public form={
+    id:null,
+    date:null,
+    name:null,
+    quantity:null,
+    supplier:null,
+    price:null,
+    total:null
+    
+  }
+  dialogRef:any
   constructor(public dialog: MatDialog,private api:ApiService) {}
 
   ngOnInit(){
@@ -25,14 +36,28 @@ export class PurchasedComponent{
 
   add(n): void {
     this.item = this.purchasedItems.find(({id})=>id==n);
-    const dialogRef = this.dialog.open(PurchaseFormComponent, {
+    if(this.item==null){
+       this.dialogRef = this.dialog.open(PurchaseFormComponent, {
+        data: {value:this.form},
+      });
+      this.closeDialog();
+    }
+    else{
+    this.dialogRef = this.dialog.open(PurchaseFormComponent, {
       data: {value:this.item},
     });
+    this.closeDialog();
+   }
+  }
 
-    dialogRef.afterClosed().subscribe(result => {
+  closeDialog(){
+    this.dialogRef.afterClosed().subscribe(result => {
+      this.api.getPurchasedItems().subscribe((result)=>{
+        console.warn(result)
+        this.purchasedItems = result;
+      })
       console.log('The dialog was closed');
     });
   }
-
 
 }

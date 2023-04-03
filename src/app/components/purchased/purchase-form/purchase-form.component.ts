@@ -10,17 +10,8 @@ import { ApiService } from 'src/app/api.service';
 
 export class PurchaseFormComponent {
 
-  public form={
-    id:null,
-    date:'',
-    name:'',
-    quantity:0,
-    supplier:'',
-    price:0,
-    total:0
-    
-  }
-   
+  form:any
+
     // purchasedItems =    [ {id:'1',date:'12-3-12',name:'Laptop',Quanity:3,supplier:'lentra',price:'50000',Total:'1500000'}]
     // form:{id= null,date='',name='',quantity=0,supplier='',price=0,total=''};
     constructor(
@@ -35,9 +26,9 @@ export class PurchaseFormComponent {
     onNoClick(): void {
       this.dialogRef.close();
     }
-    submit(forms){
-      if(forms.id==null){
-        this.api.addPurchasedItems(forms).subscribe(res=>{
+    submit(){
+      if(this.form.id==null){
+        this.api.addPurchasedItems(this.form).subscribe(res=>{
           this.dialogRef.close();
         })
       }

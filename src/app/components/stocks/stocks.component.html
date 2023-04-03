@@ -21,11 +21,11 @@
       <tr>
         <th scope="row">{{items.id}}</th>
         <td >{{items.name}}</td>
-        <td >
-          <li *ngFor="let i of items.supplier">{{i}}</li>
+        <td >{{items.supplier}}
+          <!-- <li *ngFor="let i of items.supplier">{{i}}</li> -->
         </td>
         <td>{{items.date}}</td>
-        <td>{{items.Available}}</td>
+        <td>{{items.stocks}}</td>
       </tr>
       
     </tbody>    
