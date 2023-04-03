@@ -1,5 +1,8 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { FormComponent } from './form/form.component';
+import { MatDialog } from '@angular/material/dialog';
+
 @Component({
   selector: 'app-stocks',
   templateUrl: './stocks.component.html',
@@ -13,8 +16,8 @@ export class StocksComponent{
     {id:'4',date:'12-3-15',name:'shoes',Quanity:3,supplier:['lentra'],Available:40}
 
   ]
-
-  constructor(private router:Router){
+  item : any
+  constructor(public dialog:MatDialog){
 
   }
 
@@ -22,7 +25,16 @@ export class StocksComponent{
     console.log("clicked");
   }
 
-  add(){
-    this.router.navigate(['/home/add-stocks'])
+  add(ids){
+    this.item = this.stockItems.find(({id})=>id==ids);
+    const dialogRef = this.dialog.open(FormComponent, {
+      panelClass:'dailogs',
+      data: {value:this.item},
+    });
+    
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
+  
 }

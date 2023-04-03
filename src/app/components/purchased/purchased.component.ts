@@ -1,5 +1,6 @@
 import { AfterViewInit, Component,Inject } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import { ApiService } from 'src/app/api.service';
 import { PurchaseFormComponent } from './purchase-form/purchase-form.component';
 
 
@@ -11,15 +12,16 @@ import { PurchaseFormComponent } from './purchase-form/purchase-form.component';
 })
 export class PurchasedComponent{
 
-  purchasedItems = [
-    {id:'1',date:'12-3-12',name:'Laptop',Quantity:3,supplier:'lentra',price:'50000',Total:'1500000'},
-    {id:'2',date:'12-3-13',name:'phone',Quantity:1,supplier:'lentra',price:'5000',Total:'5000'},
-    {id:'3',date:'12-3-14',name:'bag',Quantity:10,supplier:'lentra',price:'500',Total:'5000'},
-    {id:'4',date:'12-3-15',name:'shoes',Quantity:3,supplier:'lentra',price:'5000',Total:'15000'}
-
-  ]
+  purchasedItems:any;
   item:any;
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog,private api:ApiService) {}
+
+  ngOnInit(){
+    this.api.getPurchasedItems().subscribe((result)=>{
+      console.warn(result)
+      this.purchasedItems = result;
+    })
+  }
 
   add(n): void {
     this.item = this.purchasedItems.find(({id})=>id==n);
@@ -30,10 +32,6 @@ export class PurchasedComponent{
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
-  }
-
-  edit(){
-    alert('clicked');
   }
 
 

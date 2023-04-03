@@ -1,7 +1,7 @@
 
 <section>
   <div class="example-button-row">
-        <button (click)="add()" mat-raised-button color="primary">Add Item</button>
+        <button (click)="add(null)" mat-raised-button color="primary">Add Item</button>
   </div>
 </section>
 <div class="top">
@@ -16,7 +16,7 @@
 
       </tr>
     </thead>
-    <tbody (click)="edit()" *ngFor="let items of stockItems">
+    <tbody (click)="add(items.id)" *ngFor="let items of stockItems">
     
       <tr>
         <th scope="row">{{items.id}}</th>

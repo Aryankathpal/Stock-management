@@ -1,11 +1,13 @@
 
-.top {
+/* .top {
     background-color: #FFFFFF;
     width: 500px;
-    height: 500px;
-    margin: 7em auto;
+    height: 450px;
     border-radius: 1.5em;
     box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+} */
+.top{
+    border-radius: 1.5rem;
 }
 .btn{
     display: block;
@@ -31,8 +33,12 @@ margin-bottom: 27px;
 font-family: 'Ubuntu', sans-serif;
 }
 
-form.form1 {
-    padding-top: 80px;
+.form1 {
+    padding-top: 60px;
+    width: 500px;
+    height: 430px;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    border-radius: 1.5rem;
 }
 
 .un:focus, .pass:focus {

@@ -18,6 +18,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormComponent } from './components/stocks/form/form.component';
 import { PurchaseFormComponent } from './components/purchased/purchase-form/purchase-form.component'
 import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatPaginatorModule,
     MatButtonModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    // NgModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
