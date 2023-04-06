@@ -1,0 +1,18 @@
+
+<form class="form1">
+    <input class="un " type="date" name="date" [(ngModel)]="form.date" value={{form.date}} placeholder="Date" required>
+    <input class="un " type="text" name="name" [(ngModel)]="form.name" value={{form.name}} placeholder="Item Name" required>
+    <input class="un " type="text" name="invoice" [(ngModel)]="form.invoice" value={{form.invoice}} placeholder="Invoice No." required>
+    <input class="un " type="text" name="supplier" [(ngModel)]="form.supplier" value={{form.supplier}} placeholder="Supplier" required>
+    <input class="un " type="text" name="quantity" [(ngModel)]="form.quantity" value={{form.quantity}} placeholder="Quantity" required>
+    <input class="un " type="text" name="price" [(ngModel)]="form.price" value={{form.price}} placeholder="Price" required>
+    <input class="un " type="text" name="amount" [(ngModel)]="form.amount" value={{form.amount}} placeholder="Amount" required>
+
+    <section class="example-button-row">
+        <div *ngIf="form.id!=null else other">
+            <button (click)="submit()" type="submit" class="btn btn-primary">Update Item</button>
+      </div>
+      <ng-template #other><button (click)="submit()" type="submit" class="btn btn-primary">Add Item</button>
+      </ng-template>
+    </section>
+  </form>               

@@ -13,21 +13,17 @@
         <th scope="col">Supplier</th>
         <th scope="col">Date</th>
         <th scope="col">Available Stocks</th>
-
       </tr>
     </thead>
-    <tbody (click)="add(items.id)" *ngFor="let items of stockItems">
-    
+    <tbody *ngFor="let items of stockItems">
       <tr>
-        <th scope="row">{{items.id}}</th>
-        <td >{{items.name}}</td>
-        <td >{{items.supplier}}
-          <!-- <li *ngFor="let i of items.supplier">{{i}}</li> -->
-        </td>
-        <td>{{items.date}}</td>
-        <td>{{items.stocks}}</td>
+        <th (click)="add(items.id)" scope="row">{{items.id}}</th>
+        <td (click)="add(items.id)"  >{{items.name}}</td>
+        <td (click)="add(items.id)" >{{items.supplier}}</td>
+        <td (click)="add(items.id)" >{{items.date}}</td>
+        <td (click)="add(items.id)" >{{items.stocks}}</td>
+        <td><button class="del" (click)="delete(items.id)"><mat-icon >highlight_off</mat-icon></button></td>   
       </tr>
-      
     </tbody>    
 </table>
 </div>

@@ -7,6 +7,8 @@ table {
 }
 .top{
   padding: 50px;
+  padding-top: 70px;
+
 }
 section {
   display: table;
@@ -18,3 +20,12 @@ li {
   list-style-type: none;
 }
 
+.mat-icon{
+  height: 22px;
+  width: 30px;
+}
+.del{
+  background-color: transparent;
+  border: none;
+  color: maroon;
+}

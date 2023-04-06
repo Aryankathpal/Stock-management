@@ -20,14 +20,15 @@
       </thead>
       <tbody>
         
-        <tr (click)="add(item.id)"  *ngFor="let item of purchasedItems">
-          <th   scope="row">{{item.id}}</th>
-          <td>{{item.date}}</td>
-          <td>{{item.name}}</td>
-          <td>{{item.quantity}}</td>
-          <td>{{item.supplier}}</td>
-          <td>{{item.price}}</td>
-          <td>{{item.total}}</td>
+        <tr  *ngFor="let item of purchasedItems">
+          <th (click)="add(item.id)"   scope="row">{{item.id}}</th>
+          <td (click)="add(item.id)" >{{item.date}}</td>
+          <td (click)="add(item.id)" >{{item.name}}</td>
+          <td (click)="add(item.id)" >{{item.quantity}}</td>
+          <td (click)="add(item.id)" >{{item.supplier}}</td>
+          <td (click)="add(item.id)" >{{item.price}}</td>
+          <td (click)="add(item.id)" >{{item.total}}</td>
+          <td><button class="del" (click)="delete(item.id)"><mat-icon >highlight_off</mat-icon></button></td>   
         </tr>
       </tbody>    
   </table>

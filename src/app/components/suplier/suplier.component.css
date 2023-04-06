@@ -1,0 +1,38 @@
+
+table {
+    width: 100%;
+  }
+  .table{
+    --bs-table-hover-bg:#ebf5fa;
+  }
+  .top{
+    padding: 50px;
+    padding-top: 70px;
+  }
+  section {
+    display: table;
+    right: 30px;
+  position: absolute;
+  padding: 20px;
+  }
+  li {
+    list-style-type: none;
+  }
+  
+  .mat-icon{
+    height: 22px;
+    width: 30px;
+  }
+  .del{
+    background-color: transparent;
+    border: none;
+    color: maroon;
+  }
+  .active{
+    margin-top: 5px;
+    width: 60px;
+    padding: auto;
+    text-align: center;
+    border-radius: 1em;
+    color: #ebf5fa;
+  }

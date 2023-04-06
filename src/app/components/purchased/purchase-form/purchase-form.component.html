@@ -2,14 +2,16 @@
     <form class="form1">
       <input class="un " type="text" name="name" [(ngModel)]="form.name" placeholder="Item Name">
       <input class="un " type="text" name="supplier" [(ngModel)]="form.supplier" placeholder="Supplier">
-      <input class="un " type="text" name="date"[(ngModel)]="form.date" placeholder="Date">
+      <input class="un " type="date" name="date"[(ngModel)]="form.date" placeholder="Date">
       <input class="un " type="text" name="quantity"[(ngModel)]="form.quantity" placeholder="Quantity">
       <input class="un " type="text" name="price"[(ngModel)]="form.price" placeholder="Price">
       <input class="un " type="text" name="total"[(ngModel)]="form.total" placeholder="Total">
       <section>
-        <div class="example-button-row">
-              <button class="btn btn-primary" (click)="submit()" >Add Item</button>
-        </div>
+        <div *ngIf="form.id!=null else other" class="example-button-row">
+            <button (click)="submit()" type="submit" class="btn btn-primary">Update Item</button>
+      </div>
+      <ng-template #other><button (click)="submit()" type="submit" class="btn btn-primary">Add Item</button>
+      </ng-template>
       </section>
     </form>               
 </div>

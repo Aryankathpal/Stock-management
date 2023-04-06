@@ -1,0 +1,12 @@
+.chart-container{
+    background-color: white;
+    width: 80%;
+    /* box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.1); */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    border-radius: 7px;
+    padding: 20px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 80px;
+}

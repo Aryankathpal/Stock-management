@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PurchasedComponent } from './components/purchased/purchased.component';
-import { ItemsComponent } from './components/items/items.component';
 import { SalesComponent } from './components/sales/sales.component';
 import { StocksComponent } from './components/stocks/stocks.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -20,20 +19,28 @@ import { PurchaseFormComponent } from './components/purchased/purchase-form/purc
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormSalesComponent } from './components/sales/form-sales/form-sales.component';
+import { FormSuplierComponent } from './components/suplier/form-suplier/form-suplier.component';
+import { CardsComponent } from './components/dashboard/cards/cards.component';
+import {HighchartsChartModule } from 'highcharts-angular';
+import { ChartModule } from 'angular-highcharts';
+import { ChartComponent } from './components/dashboard/chart/chart.component'
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DashboardComponent,
     PurchasedComponent,
-    ItemsComponent,
     SalesComponent,
     StocksComponent,
     SidebarComponent,
     SuplierComponent,
     FormComponent,
-    PurchaseFormComponent
+    PurchaseFormComponent,
+    FormSalesComponent,
+    FormSuplierComponent,
+    CardsComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -46,9 +53,13 @@ import { HttpClientModule } from '@angular/common/http';
     MatDialogModule,
     // NgModule
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HighchartsChartModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+}

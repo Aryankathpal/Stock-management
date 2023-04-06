@@ -1,31 +1,29 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-
+import { globalComponent } from 'src/global-components';
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  url= "http://localhost:8081"
   constructor(public http:HttpClient) {
 
   }
 
   getStocks(){
-    return this.http.get(this.url+'/items');
+    return this.http.get(globalComponent.url+'/items');
   }
   getStocksById(body){
-    return this.http.get(this.url+'/item/'+body.id);
+    return this.http.get(globalComponent.url+'/item/'+body.id);
   }
   updateStock(body){
-    return this.http.put(this.url+'/update-item/'+body.id,body);
+    return this.http.put(globalComponent.url+'/update-item/'+body.id,body);
   }
-  deleteStock(body){
-    return this.http.delete(this.url+'/delete-item/'+body.id);
+  deleteStock(id){
+    return this.http.delete(globalComponent.url+'/delete-item/'+id);
   }
   addStock(body){
-    return this.http.post(this.url+'/add-stock',body);
+    return this.http.post(globalComponent.url+'/add-stock',body);
   }
 
 }

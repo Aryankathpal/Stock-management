@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
-import { ItemsComponent } from './components/items/items.component';
 import { PurchaseFormComponent } from './components/purchased/purchase-form/purchase-form.component';
 import { PurchasedComponent } from './components/purchased/purchased.component';
 import { SalesComponent } from './components/sales/sales.component';
@@ -19,7 +18,6 @@ const routes: Routes = [
   {path:'purchased-items',component:PurchasedComponent},
   {path:'suppliers',component:SuplierComponent},
   {path:'stocks-list',component:StocksComponent},
-  {path:'items',component:ItemsComponent},
   {path:'add-stocks',component:FormComponent},
   {path:'add-purchase',component:PurchaseFormComponent}
 

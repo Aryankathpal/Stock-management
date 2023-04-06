@@ -12,6 +12,7 @@ import { ApiService } from './api.service';
 export class StocksComponent{
   stockItems:any;
   dialogRef:any;
+  deletecheck = false;
   form={
     name:null,
     supplier:null,
@@ -31,8 +32,13 @@ export class StocksComponent{
     })
   }
 
-  edit(){
-    console.log("clicked");
+  delete(id){
+    this.api.deleteStock(id).subscribe(res=>{
+      this.api.getStocks().subscribe((result)=>{
+        this.stockItems = result;
+      })
+      console.log("called");
+    });
   }
 
   add(n){

@@ -1,1 +1,7 @@
-<p>dashboard works!</p>
+<div  class="mains">
+    <div class="cards-top" *ngFor="let i of data">
+        <app-cards [data]="i"></app-cards>
+</div>
+<div class=""><app-chart [datas]="Sales"></app-chart>
+</div>
+</div>

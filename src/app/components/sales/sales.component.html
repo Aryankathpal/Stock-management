@@ -1,2 +1,40 @@
-<p>sales works!</p>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe at nemo id natus qui praesentium, accusamus ut officia veniam eum? Iure, facere! Et corporis ad ab asperiores perferendis enim voluptatibus!
+
+<section>
+    <div class="example-button-row">
+          <button (click)="add(null)" mat-raised-button color="primary">Add Item</button>
+    </div>
+  </section>
+  <div class="top">
+  <table class="table table-hover">
+    <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Date</th>
+          <th scope="col">Item Name</th>
+          <th scope="col">Invoice No.</th>
+          <th scope="col">Supplier</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+          <th scope="col">Amount</th>
+
+  
+        </tr>
+      </thead>
+      <tbody  *ngFor="let items of orders">
+      
+        <tr>
+          <th scope="row">{{items.id}}</th>
+          <td (click)="add(items.id)">{{items.date}}</td>
+          <td (click)="add(items.id)">{{items.name}}</td>
+          <td (click)="add(items.id)">{{items.invoice}}</td>
+          <td (click)="add(items.id)">{{items.supplier}}</td>
+          <td (click)="add(items.id)">{{items.quantity}}</td>
+          <td (click)="add(items.id)">{{items.price}}</td>
+          <td (click)="add(items.id)">{{items.amount}}</td>
+          <td><button class="del" (click)="delete(items.id)"><mat-icon >highlight_off</mat-icon></button></td>   
+        </tr>
+        
+      </tbody>    
+  </table>
+  </div>
+  

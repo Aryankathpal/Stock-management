@@ -12,6 +12,7 @@ import { PurchaseFormComponent } from './purchase-form/purchase-form.component';
 })
 export class PurchasedComponent{
 
+  check=true;
   purchasedItems:any;
   item:any;
   public form={
@@ -32,6 +33,14 @@ export class PurchasedComponent{
       console.warn(result)
       this.purchasedItems = result;
     })
+  }
+
+  delete(id){
+    this.api.deletePurchase(id).subscribe(res=>{
+      this.api.getPurchasedItems().subscribe((result)=>{
+        this.purchasedItems = result;
+      })
+    });
   }
 
   add(n): void {

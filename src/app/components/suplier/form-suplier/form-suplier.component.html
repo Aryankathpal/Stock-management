@@ -1,0 +1,18 @@
+
+<form class="form1">
+    <input class="un " type="date" name="date" [(ngModel)]="form.date" value={{form.date}} placeholder="dd-mm-yyyy" required>
+    <input class="un " type="text" name="item" [(ngModel)]="form.item" value={{form.item}} placeholder="Supplier Item" required>
+    <input class="un " type="text" name="name" [(ngModel)]="form.name" value={{form.name}} placeholder="Supplier Name" required>
+    <input class="un " type="text" name="phone" [(ngModel)]="form.phone" value={{form.phone}} placeholder="Contact No." required>
+    <select class="un " [(ngModel)]="form.status" name="language">
+        <option value="true" name="active">Active</option>
+        <option value="false"name="inactive">Inactive</option>
+      </select>
+    <section>
+        <div *ngIf="form.id!=null else other" class="example-button-row">
+            <button (click)="submit()" type="submit" class="btn btn-primary">Update Item</button>
+      </div>
+      <ng-template #other><button (click)="submit()" type="submit" class="btn btn-primary">Add Item</button>
+      </ng-template>
+    </section>
+  </form>               

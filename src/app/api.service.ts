@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { globalComponent } from 'src/global-components';
 
 
 @Injectable({
@@ -7,16 +8,19 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
-  url= "http://localhost:8081"
   constructor(private http:HttpClient) { }
 
   getPurchasedItems(){ 
-    return this.http.get(this.url+'/purchased-items')
+    console.log(globalComponent.url+'/purchased-items');
+    return this.http.get(globalComponent.url+'/purchased-items')
   }
   updatePurchasedItems(body){
-    return this.http.put(this.url+'/update-purchase/'+body.id,body)
+    return this.http.put(globalComponent.url+'/update-purchase/'+body.id,body)
   }
   addPurchasedItems(body){
-    return this.http.post(this.url+'/add-purchase',body);
+    return this.http.post(globalComponent.url+'/add-purchase',body);
+  }
+  deletePurchase(id){
+    return this.http.delete(globalComponent.url+'/delete-purchase/'+id);
   }
 }

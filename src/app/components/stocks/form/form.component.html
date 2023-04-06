@@ -2,11 +2,13 @@
     <form class="form1">
       <input class="un " type="text" name="name" [(ngModel)]="form.name" value={{form.name}} placeholder="Item Name" required>
       <input class="un " type="text" name="supplier" [(ngModel)]="form.supplier" value={{form.supplier}} placeholder="Supplier" required>
-      <input class="un " type="text" name="date" [(ngModel)]="form.date" value={{form.date}} placeholder="Date" required>
+      <input class="un " type="date" name="date" [(ngModel)]="form.date" value={{form.date}} placeholder="Date" required>
       <input class="un " type="text" name="stocks" [(ngModel)]="form.stocks" value={{form.stocks}} placeholder="Available Stocks" required>
       <section>
-        <div class="example-button-row">
-              <button (click)="submit()" type="submit" class="btn btn-primary">Add Item</button>
-        </div>
+        <div *ngIf="form.id!=null else other" class="example-button-row">
+            <button (click)="submit()" type="submit" class="btn btn-primary">Update Item</button>
+      </div>
+      <ng-template #other><button (click)="submit()" type="submit" class="btn btn-primary">Add Item</button>
+      </ng-template>
       </section>
     </form>               

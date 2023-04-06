@@ -1,0 +1,12 @@
+.mains{
+    background-color: #ebf5fa;
+    /* position:absolute; */
+    /* background-color: red; */
+    margin: -20px;
+    border-radius: 0.8em;
+    border: none;
+    padding-bottom: 50px;
+}
+.cards-top{
+    display: inline-block;
+}
