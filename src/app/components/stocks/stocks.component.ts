@@ -10,6 +10,8 @@ import { ApiService } from './api.service';
   styleUrls: ['./stocks.component.css']
 })
 export class StocksComponent{
+
+  searchText:any;
   stockItems:any;
   dialogRef:any;
   deletecheck = false;

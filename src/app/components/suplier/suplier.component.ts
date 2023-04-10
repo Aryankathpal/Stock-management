@@ -10,6 +10,7 @@ import { FormSuplierComponent } from './form-suplier/form-suplier.component';
 })
 export class SuplierComponent {
 
+  searchText:any;
   item:any;
   suppliers:any;
   dialogRef:any;

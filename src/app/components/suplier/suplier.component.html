@@ -1,5 +1,8 @@
 
 <section>
+   <form class="search">
+    <input class="form-control mr-sm-2" type="search" name="search" [(ngModel)]="searchText" placeholder="Search" aria-label="Search">
+  </form>
     <div class="example-button-row">
           <button (click)="add(null)" mat-raised-button color="primary">Add Item</button>
     </div>
@@ -16,7 +19,7 @@
           <th scope="col">Status</th>
         </tr>
       </thead>
-      <tbody *ngFor="let items of suppliers">
+      <tbody *ngFor="let items of suppliers | filter:searchText">
         <tr>
           <th (click)="add(items.id)" scope="row">{{items.id}}</th>
           <td (click)="add(items.id)" >{{items.date}}</td>
@@ -31,5 +34,7 @@
         </tr>
       </tbody>    
   </table>
+ 
   </div>
+
   

@@ -9,6 +9,7 @@ import { ApiSalesService } from '../api-sales.service';
 })
 export class FormSalesComponent {
   form:any;
+  updatedItem:any;
   constructor(
     public dialogRef: MatDialogRef<FormSalesComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -34,13 +35,16 @@ export class FormSalesComponent {
       this.amountCalc(this.form.price,this.form.quantity);
       console.log(this.form);
       if(this.validation()){
+
       if(this.form.id==null){
         this.api.addSales(this.form).subscribe(res=>{
+          // this.updateStocks();
          this.dialogRef.close();
         })
       }
       else{
       this.api.updateSales(this.form).subscribe(res=>{
+        // this.updateStocks();
         this.dialogRef.close();
       },err=>{
         alert("Something went wrong");
@@ -50,6 +54,7 @@ export class FormSalesComponent {
     alert("Input all the fields");
   }
 }
+
 
     amountCalc(val,n){
       this.form.amount=val*n;

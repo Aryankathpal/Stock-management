@@ -10,6 +10,7 @@ import { FormSalesComponent } from './form-sales/form-sales.component';
 })
 export class SalesComponent {
 
+  searchText:any;
   dialogRef:any;
   item:any;
   form={

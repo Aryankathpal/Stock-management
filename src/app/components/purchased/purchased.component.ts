@@ -12,6 +12,7 @@ import { PurchaseFormComponent } from './purchase-form/purchase-form.component';
 })
 export class PurchasedComponent{
 
+  searchText:any;
   check=true;
   purchasedItems:any;
   item:any;

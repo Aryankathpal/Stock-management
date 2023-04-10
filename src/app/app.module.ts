@@ -25,6 +25,7 @@ import { CardsComponent } from './components/dashboard/cards/cards.component';
 import {HighchartsChartModule } from 'highcharts-angular';
 import { ChartModule } from 'angular-highcharts';
 import { ChartComponent } from './components/dashboard/chart/chart.component'
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,8 @@ import { ChartComponent } from './components/dashboard/chart/chart.component'
     FormsModule,
     HttpClientModule,
     HighchartsChartModule,
-    ChartModule
+    ChartModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
