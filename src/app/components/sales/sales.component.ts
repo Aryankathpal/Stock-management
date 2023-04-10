@@ -13,7 +13,6 @@ export class SalesComponent {
   dialogRef:any;
   item:any;
   form={
-          id:null,
           date:null,
           name:null,
           invoice:null,

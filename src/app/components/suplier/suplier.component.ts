@@ -14,7 +14,6 @@ export class SuplierComponent {
   suppliers:any;
   dialogRef:any;
   form={
-    id:null,
     date:null,
     item:null,
     name:null,

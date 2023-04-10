@@ -21,12 +21,21 @@ export class PurchaseFormComponent {
           this.form= data.value;
       }
 
-
+      validation(){
+        console.warn(this.form);
+        for (var key in this.form) {
+          if (this.form[key] === null || this.form[key] == "")
+              return false;
+      }
+      return true;
+      }
 
     onNoClick(): void {
       this.dialogRef.close();
     }
     submit(){
+      this.amountCalc(this.form.price,this.form.quantity);
+      if(this.validation()){
       if(this.form.id==null){
         this.api.addPurchasedItems(this.form).subscribe(res=>{
           this.dialogRef.close();
@@ -39,5 +48,14 @@ export class PurchaseFormComponent {
         alert("Something went wrong");
       });
     }
+  }
+  else{
+    alert("Input all the fields")
+  }
+}
+
+  amountCalc(val,n){
+    this.form.total=val*n;
+    console.log(this.form.total);
   }
 }

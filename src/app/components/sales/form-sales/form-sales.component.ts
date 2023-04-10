@@ -16,12 +16,24 @@ export class FormSalesComponent {
     
     ) {
         this.form= data.value;
-        console.log(this.form)
     }
     onNoClick(): void {
       this.dialogRef.close();
     }
+
+    validation(){
+      for (var key in this.form) {
+        if (this.form[key] === null || this.form[key] == "")
+            return false;
+    }
+    return true;
+    }
+
+
     submit(){
+      this.amountCalc(this.form.price,this.form.quantity);
+      console.log(this.form);
+      if(this.validation()){
       if(this.form.id==null){
         this.api.addSales(this.form).subscribe(res=>{
          this.dialogRef.close();
@@ -34,8 +46,15 @@ export class FormSalesComponent {
         alert("Something went wrong");
       });
     }
-    }
+  }else{
+    alert("Input all the fields");
+  }
+}
 
+    amountCalc(val,n){
+      this.form.amount=val*n;
+      console.log(this.form.amount);
+    }
 
 
   

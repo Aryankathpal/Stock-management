@@ -20,19 +20,13 @@ export class ChartComponent {
       type: 'line', //this denotes tha type of chart
 
       data: {// values on X-Axis
-        labels: ['2022-05-10', '2022-05-11', '2022-05-12','2022-05-13',
-								 '2022-05-14', '2022-05-15', '2022-05-16','2022-05-17','2022',' 12' ], 
+        labels: [], 
 	       datasets: [
           {
             label: "Sales",
             data: [],
             backgroundColor: 'blue'
-          },
-          {
-            label: "Profit",
-            data: ["100","200"],
-            backgroundColor: 'limegreen'
-          }  
+          }, 
         ]
       },
       options: {
@@ -66,7 +60,7 @@ export class ChartComponent {
     });
     this.salePointer = this.Sales.map(obj=>obj.amount);
     this.chart.data.datasets[0].data=[...this.salePointer];
-    this.chart.data.labels.push(this.Sales.map(obj=>obj.date));
+    this.chart.data.labels=[...this.Sales.map(obj=>obj.date)];
     console.warn(this.chart.data.datasets[0].data);
     this.chart.update();
   }

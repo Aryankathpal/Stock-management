@@ -27,7 +27,18 @@ export class FormComponent {
   onNoClick(): void {
     this.dialogRef.close();
   }
+
+  validation(){
+    for (var key in this.form) {
+      if (this.form[key] === null || this.form[key] == "")
+          return false;
+  }
+  return true;
+  }
+
   submit(){
+    console.log(this.form);
+    if(this.validation()){
     if(this.form.id==null){
       this.api.addStock(this.form).subscribe(res=>{
        this.router.navigate(['/home/stocks-list'])
@@ -41,5 +52,8 @@ export class FormComponent {
       alert("Something went wrong");
     });
   }
+  }else{
+  alert("Input all the fields");
   }
+}
 }

@@ -16,7 +16,6 @@ export class PurchasedComponent{
   purchasedItems:any;
   item:any;
   public form={
-    id:null,
     date:null,
     name:null,
     quantity:null,
@@ -30,7 +29,6 @@ export class PurchasedComponent{
 
   ngOnInit(){
     this.api.getPurchasedItems().subscribe((result)=>{
-      console.warn(result)
       this.purchasedItems = result;
     })
   }

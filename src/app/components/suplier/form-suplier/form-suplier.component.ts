@@ -22,8 +22,18 @@ export class FormSuplierComponent {
   onNoClick(): void {
     this.dialogRef.close();
   }
+
+  validation(){
+    for (var key in this.form) {
+      if (this.form[key] === null || this.form[key] === "")
+          return false;
+  }
+  return true;
+  }
+
   submit(){
-    console.warn(this.form);
+    console.warn(this.form)
+    if(this.validation()){
     if(this.form.id==null){
       this.api.addSupplier(this.form).subscribe(res=>{
        this.dialogRef.close();
@@ -36,5 +46,8 @@ export class FormSuplierComponent {
       alert("Something went wrong");
     });
   }
+  }else{
+    alert("Input all the fields");
   }
+}
 }

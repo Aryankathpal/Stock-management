@@ -18,7 +18,6 @@ export class StocksComponent{
     supplier:null,
     stocks:null,
     date:null,
-    id:null
   }
   item : any
   constructor(public dialog:MatDialog,public api:ApiService){

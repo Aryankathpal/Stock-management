@@ -15,8 +15,8 @@
         <th scope="col">Available Stocks</th>
       </tr>
     </thead>
-    <tbody *ngFor="let items of stockItems">
-      <tr>
+    <tbody *ngFor="let items of stockItems" >
+      <tr *ngIf="items.stocks<10 else other" style="color: red;">
         <th (click)="add(items.id)" scope="row">{{items.id}}</th>
         <td (click)="add(items.id)"  >{{items.name}}</td>
         <td (click)="add(items.id)" >{{items.supplier}}</td>
@@ -24,6 +24,16 @@
         <td (click)="add(items.id)" >{{items.stocks}}</td>
         <td><button class="del" (click)="delete(items.id)"><mat-icon >highlight_off</mat-icon></button></td>   
       </tr>
+      <ng-template #other>
+        <tr >
+          <th (click)="add(items.id)" scope="row">{{items.id}}</th>
+          <td (click)="add(items.id)"  >{{items.name}}</td>
+          <td (click)="add(items.id)" >{{items.supplier}}</td>
+          <td (click)="add(items.id)" >{{items.date}}</td>
+          <td (click)="add(items.id)" >{{items.stocks}}</td>
+          <td><button class="del" (click)="delete(items.id)"><mat-icon >highlight_off</mat-icon></button></td>   
+        </tr>
+      </ng-template>
     </tbody>    
 </table>
 </div>
