@@ -1,5 +1,6 @@
 import { Component ,Inject} from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import { ApiService as stockApi} from '../../stocks/api.service';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -17,7 +18,9 @@ export class PurchaseFormComponent {
     constructor(
       public dialogRef: MatDialogRef<PurchaseFormComponent>,
       @Inject(MAT_DIALOG_DATA) public data: any,
-      private api:ApiService) {
+     private StockApi : stockApi,
+     private api:ApiService
+      ) {
           this.form= data.value;
       }
 
@@ -38,11 +41,13 @@ export class PurchaseFormComponent {
       if(this.validation()){
       if(this.form.id==null){
         this.api.addPurchasedItems(this.form).subscribe(res=>{
+          this.updateStocks();
           this.dialogRef.close();
         })
       }
       else{
       this.api.updatePurchasedItems(this.form).subscribe(res=>{
+        this.updateStocks();
         this.dialogRef.close();
       },err=>{
         alert("Something went wrong");
@@ -57,5 +62,10 @@ export class PurchaseFormComponent {
   amountCalc(val,n){
     this.form.total=val*n;
     console.log(this.form.total);
+  }
+  updateStocks(){
+    this.StockApi.updateOrderStocks(this.form.name,this.form.quantity).subscribe(res=>{
+      console.warn(this.form);
+    })
   }
 }

@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ApiService } from '../../stocks/api.service';
 import { ApiSalesService } from '../api-sales.service';
 
 @Component({
@@ -13,11 +14,13 @@ export class FormSalesComponent {
   constructor(
     public dialogRef: MatDialogRef<FormSalesComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-     private api : ApiSalesService
-    
+     private api : ApiSalesService,
+     private StockApi : ApiService
     ) {
         this.form= data.value;
     }
+
+
     onNoClick(): void {
       this.dialogRef.close();
     }
@@ -38,13 +41,13 @@ export class FormSalesComponent {
 
       if(this.form.id==null){
         this.api.addSales(this.form).subscribe(res=>{
-          // this.updateStocks();
+          this.updateStocks();
          this.dialogRef.close();
         })
       }
       else{
       this.api.updateSales(this.form).subscribe(res=>{
-        // this.updateStocks();
+        this.updateStocks();
         this.dialogRef.close();
       },err=>{
         alert("Something went wrong");
@@ -61,6 +64,11 @@ export class FormSalesComponent {
       console.log(this.form.amount);
     }
 
+    updateStocks(){
+      this.StockApi.updateOrderStocks(this.form.name,-1*this.form.quantity).subscribe(res=>{
+        console.warn(this.form);
+      })
+    }
 
   
 }
