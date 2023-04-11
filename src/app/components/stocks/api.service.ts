@@ -25,8 +25,10 @@ export class ApiService {
   addStock(body){
     return this.http.post(globalComponent.url+'/add-stock',body);
   }
-  updateOrderStocks(name,value){
-    return this.http.put(globalComponent.url+'/update'+'/'+name+'/'+value,{name,value});
+  // updateOrderStocks(name,value){
+  //   return this.http.put(globalComponent.url+'/update'+'/'+name+'/'+value,{name,value});
+  // }
+  updateOrderStocks(Body){
+    return this.http.put(globalComponent.url+'/update/create/'+Body.name,Body);
   }
-
 }

@@ -15,6 +15,7 @@ export class ApiService {
     return this.http.get(globalComponent.url+'/purchased-items')
   }
   updatePurchasedItems(body){
+    console.log(body);
     return this.http.put(globalComponent.url+'/update-purchase/'+body.id,body)
   }
   addPurchasedItems(body){

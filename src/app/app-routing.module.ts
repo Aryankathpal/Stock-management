@@ -10,7 +10,7 @@ import { StocksComponent } from './components/stocks/stocks.component';
 import { SuplierComponent } from './components/suplier/suplier.component';
 
 const routes: Routes = [
-  {path:'',component:HomeComponent},  
+  {path:'',redirectTo:'/home/dashboard', pathMatch:'full'},  
   {path:'home',component:HomeComponent, 
   children:[
   {path:'dashboard',component:DashboardComponent},

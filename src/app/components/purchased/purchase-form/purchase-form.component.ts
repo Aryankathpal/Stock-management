@@ -64,7 +64,7 @@ export class PurchaseFormComponent {
     console.log(this.form.total);
   }
   updateStocks(){
-    this.StockApi.updateOrderStocks(this.form.name,this.form.quantity).subscribe(res=>{
+    this.StockApi.updateOrderStocks(this.form).subscribe(res=>{
       console.warn(this.form);
     })
   }
