@@ -11,8 +11,6 @@ import {Chart} from 'chart.js/auto';
   styleUrls: ['./chart.component.css']
 })
 export class ChartComponent {
-  @Input() datas:any;
-
 
   chart:any;
   createChart(){

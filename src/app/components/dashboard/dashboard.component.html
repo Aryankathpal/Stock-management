@@ -2,6 +2,7 @@
     <div class="cards-top" *ngFor="let i of data">
         <app-cards [data]="i"></app-cards>
 </div>
-<div class=""><app-chart [datas]="Sales"></app-chart>
-</div>
+<div class="charts">
+<app-chart ></app-chart>
+<app-piechart></app-piechart>
 </div>

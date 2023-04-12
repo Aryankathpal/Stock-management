@@ -57,5 +57,8 @@
 }
 .wrap{
     width: 300px;
-    margin:0 20px 20px 40px;
+    margin:0px 20px 20px 40px;
+}
+.row{
+  margin-top:30px;
 }

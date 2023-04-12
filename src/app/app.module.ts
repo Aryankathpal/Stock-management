@@ -26,6 +26,7 @@ import {HighchartsChartModule } from 'highcharts-angular';
 import { ChartModule } from 'angular-highcharts';
 import { ChartComponent } from './components/dashboard/chart/chart.component'
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { PiechartComponent } from './components/dashboard/piechart/piechart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FormSalesComponent,
     FormSuplierComponent,
     CardsComponent,
-    ChartComponent
+    ChartComponent,
+    PiechartComponent
   ],
   imports: [
     BrowserModule,

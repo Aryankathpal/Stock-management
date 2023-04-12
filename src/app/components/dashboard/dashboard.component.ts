@@ -11,8 +11,8 @@ import { ApiService as StockApi } from '../stocks/api.service';
 })
 export class DashboardComponent {
 data=[
-  {name:"Sales",value:"-",subValue:'This Month'},
-  {name:"Purchased Items",value:"-",subValue:'This Month'},
+  {name:"Sales",value:"-",subValue:'Total'},
+  {name:"Purchased Items",value:"-",subValue:'Total'},
   {name:"Suppliers",value:"-",subValue:'Total'},
   {name:"Stocks",value:"-",subValue:'Items'}
 ]
